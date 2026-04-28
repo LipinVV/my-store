@@ -4,12 +4,12 @@ import { createSelectorSnapshot } from "./createSelectorSnapshot";
 
 export const createUseStore = <T>(store: {
     getState: () => T;
-    subscribe: (l: () => void) => () => void;
+    subscribe: (listener: () => void) => () => void;
 }) => {
-    return function useStore<R>(
-        selector: (s: T) => R,
+    const useStore = <R>(
+        selector: (state: T) => R,
         isEqual: (last: R, next: R) => boolean = Object.is
-    ) {
+    ) => {
         const snapshotRef = useRef<() => R>(null);
 
         if (!snapshotRef.current) {
@@ -26,4 +26,6 @@ export const createUseStore = <T>(store: {
             snapshotRef.current
         );
     };
+
+    return useStore;
 }

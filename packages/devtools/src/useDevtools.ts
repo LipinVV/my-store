@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import {Devtools, HistoryItem} from "./types";
+import { Devtools, HistoryItem } from "./types";
 
 export const useDevtools = <T>(devtools: Devtools<T>) => {
     const [history, setHistory] = useState<HistoryItem<T>[]>(devtools.getHistory());

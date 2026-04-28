@@ -1,6 +1,6 @@
 export const createSelectorSnapshot = <T, R>(
     store: { getState: () => T },
-    selector: (selector: T) => R,
+    selector: (state: T) => R,
     isEqual: (last: R, next: R) => boolean = Object.is
 ) => {
     let lastState = store.getState();
