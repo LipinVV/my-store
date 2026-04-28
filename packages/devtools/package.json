@@ -1,0 +1,7 @@
+{
+  "name": "@legend/store-devtools",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "react": "^18.0.0"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "my-store",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w apps/demo",
+    "build": "tsc -b"
+  },
+  "devDependencies": {
+    "@types/react-dom": "^19.2.3"
+  }
+}

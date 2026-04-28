@@ -1,0 +1,4 @@
+.idea
+node_modules
+apps/demo/node_modules
+packages/core/
